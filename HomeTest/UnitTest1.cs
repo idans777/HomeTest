@@ -47,25 +47,10 @@ namespace HomeTest
             loggedInPage.AssertLogIn();
         }
 
-        [Test]
-        public void Test2()
-        {
-            _driver.Navigate().GoToUrl("https://file-examples.com/ ");
-            _driver.Manage().Window.Maximize();
-
-            VerifyPage verifyPage = new VerifyPage(_driver);
-            verifyPage.ClickCheckBox();
-        }
-
-        [Test]
-        public void Test3()
-        {
-
-        }
-
         [TearDown]
         public void TearDown()
         {
+            _driver.Dispose();
             _driver.Quit();
         }
     }
